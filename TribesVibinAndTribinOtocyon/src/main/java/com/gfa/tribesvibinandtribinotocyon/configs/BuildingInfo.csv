@@ -1,0 +1,11 @@
+Building,Function,food,wood,stone,iron,starting lvl,build time,max lvl,Castle lvl needed
+Castle,unlocks buildings and decrease building time,20,50,50,20,0,30,5,0
+Farm,produces food,5,10,20,10,1,5,10,0
+Woodcutter,produces wood,20,5,10,10,1,5,10,0
+Quarry,produces stone,10,10,5,20,1,5,10,0
+Iron mine,produces iron,10,20,10,5,1,5,10,0
+Housing,increases worker count,10,5,5,0,1,5,10,0
+Stockpile,increases storage space,0,10,10,5,1,10,5,0
+Barracks,trains soldiers,5,25,20,5,0,15,10,1
+Wall,defense bonus to defenders,0,25,50,5,0,30,5,1
+Blacksmith,unlocks new units (not in use yet),10,25,50,25,0,20,5,1

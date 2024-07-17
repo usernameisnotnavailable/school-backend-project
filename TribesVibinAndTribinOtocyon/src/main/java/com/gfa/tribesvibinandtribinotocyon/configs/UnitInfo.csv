@@ -1,0 +1,11 @@
+Unit name,HP,attack,defense,food,wood,stone,iron,speed,carry capacity,train time,barrack lvl
+militia,10,1,0,5,0,0,0,25,20,1,1
+spearman,15,2,1,10,5,0,0,25,20,2,2
+archer,10,2,1,10,10,0,0,25,15,4,3
+swordsman,30,4,3,15,5,0,10,20,15,8,4
+scout,25,2,1,40,0,0,5,100,50,10,5
+crossbowman,25,5,2,25,25,0,5,20,10,15,6
+light cavalry,40,5,3,60,10,0,15,75,30,20,7
+longbow man,25,8,2,25,50,0,10,25,15,30,8
+knight,50,10,5,25,10,0,25,15,5,45,9
+heavy cavalry,100,15,10,100,25,0,75,35,25,60,10

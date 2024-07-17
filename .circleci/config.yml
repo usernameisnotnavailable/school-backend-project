@@ -1,0 +1,58 @@
+version: 2.1
+
+jobs:
+  build_and_test:
+    docker:
+      - image: cimg/openjdk:19.0.1
+
+    steps:
+      - checkout
+
+      - run:
+          name: Build and Test
+          command: |
+            cd TribesVibinAndTribinOtocyon
+            chmod +x ./gradlew
+            ./gradlew build --warning-mode all
+            ./gradlew test --warning-mode all
+            
+          steps:
+      - run:
+          name: Save test results
+          command: |
+            mkdir -p ~/test-results/junit/
+            find . -type f -regex ".*/build/test-results/.*xml" -exec cp {} ~/test-results/junit/ \;
+          when: always
+      - store_test_results:
+          path: ~/test-results
+          
+  deploy:
+    working_directory: ~/tribes
+    docker:
+      - image: docker:24.0.7-git
+    steps:
+      - checkout
+
+      - setup_remote_docker
+
+      - attach_workspace:
+          at: .
+      - run:
+          name: "Start SQL"
+          command: docker-compose -f ./TribesVibinAndTribinOtocyon/docker-compose.yaml up -d mysql-server
+      - run:
+          name: "Build Image"
+          command: docker build -t schimiuss/tribes --pull --build-arg JAR_FILE=TribesVibinAndTribinOtocyon -f Dockerfile .
+      - run:
+          name: "Docker Login"
+          command: echo "$DOCKER_PAT" | docker login -u "$DOCKER_USR" --password-stdin
+      - run:
+          name: "Publish Image"
+          command: docker image push schimiuss/tribes:latest 
+
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build_and_test
+      - deploy

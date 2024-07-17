@@ -1,0 +1,11 @@
+lvl,prod building worker slot,Housing worker amount,Stockpile storage space,Castle build time reduction,wall defense bonus,Barracks unlocks
+1,1,3,100,10,5,militia
+2,2,6,400,20,10,spearman
+3,3,9,1600,30,15,archer
+4,5,15,6400,40,20,swordsman
+5,8,24,25600,50,25,scout
+6,13,39,,,,crossbowman
+7,21,61,,,,light cavalry
+8,34,102,,,,longbowman
+9,55,165,,,,knight
+10,100,300,,,,heavy cavalry
