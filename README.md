@@ -1,3 +1,8 @@
+This project was uploaded in one piece because the original GFA-> Codecool project remaind private.
+
+The project aim was to practice and apply our knowledge from Java backed developer course, and to simulate real work experience.
+
+---
 # Tribes Backend
 
 Dependencies:
